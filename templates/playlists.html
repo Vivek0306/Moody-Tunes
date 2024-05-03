@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}Playlists{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div id="player-container">
+  </div>
+  <h6 class="mt-4">Your Mood, Your Playlist! Have a look through your songs!</h6>
+  <div class="container m-3">
+    <p>{{ response }}</p>
+    <div class="row">
+      <h1 style="color: #1DB954;">Happy Songs</h1>
+      {% for track in happy_songs %}
+      <div class="col-lg-3 col-sm-12 p-3 ">
+        <div class="card music-sec" style="width: 16rem; background-color: #171717;">
+          <div class="img-div">
+            <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
+            <div class="play-icon" onclick="playSong('{{ track.song_url }}')">
+              <span class="fa fa-play"></span>
+            </div>
+          </div>
+          <div class="card-body" style="min-height: 120px;">
+            <p class="card-text">{{ track.name }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <h1 style="color: #1DB954;">Sad Songs</h1>
+      {% for track in sad_songs %}
+      <div class="col-lg-3 col-sm-12 p-3 ">
+        <div class="card music-sec" style="width: 16rem; background-color: #171717;">
+          <div class="img-div">
+            <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
+            <div class="play-icon" onclick="playSong('{{ track.song_url }}')">
+              <span class="fa fa-play"></span>
+            </div>
+          </div>
+          <div class="card-body" style="min-height: 120px;">
+            <p class="card-text">{{ track.name }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <h1 style="color: #1DB954;">Surprised Songs</h1>
+      {% for track in surprised_songs %}
+      <div class="col-lg-3 col-sm-12 p-3 ">
+        <div class="card music-sec" style="width: 16rem; background-color: #171717;">
+          <div class="img-div">
+            <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
+            <div class="play-icon" onclick="playSong('{{ track.song_url }}')">
+              <span class="fa fa-play"></span>
+            </div>
+          </div>
+          <div class="card-body" style="min-height: 120px;">
+            <p class="card-text">{{ track.name }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <h1 style="color: #1DB954;">Fearful Songs</h1>
+      {% for track in fear_songs %}
+      <div class="col-lg-3 col-sm-12 p-3 ">
+        <div class="card music-sec" style="width: 16rem; background-color: #171717;">
+          <div class="img-div">
+            <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
+            <div class="play-icon" onclick="playSong('{{ track.song_url }}')">
+              <span class="fa fa-play"></span>
+            </div>
+          </div>
+          <div class="card-body" style="min-height: 120px;">
+            <p class="card-text">{{ track.name }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+<!-- main area -->

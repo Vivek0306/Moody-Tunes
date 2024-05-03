@@ -1,0 +1,150 @@
+body{
+  background-color: #000000 !important;
+  color: #fff;
+}
+canvas{
+  position: absolute; /* Position the overlayCanvas absolutely */
+  top: 10;
+  left: 10;
+}
+
+.vid-play{
+  position: relative;
+}
+a{
+  text-decoration: none;
+  color: grey;
+}
+
+a:hover{
+  color: white;
+  transition: color 0.4s ease ;
+}
+
+.img-div{
+  padding: 26px;
+}
+.card-img-top{
+  border-radius: 28px;
+}
+
+.img-div .play-icon{
+  position: relative;
+}
+
+.img-div .play-icon .fa {
+  position: absolute;
+  right: 10px;
+  top: -60px;
+  padding: 18px;
+  background-color: #1db954;
+  border-radius: 100%;
+  opacity: 0;
+  transition: all ease 0.4s;
+}
+
+.music-sec:hover .play-icon .fa {
+  cursor: pointer;
+  opacity: 1;
+  transform: translateY(-19px);
+}
+
+.play-icon:hover{
+  cursor: pointer;
+}
+
+.vid-cam-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.vid-cam-div{
+  min-height: 400px; 
+  min-width: 400px; 
+  background-color: #171717;
+}
+
+.search-field{
+  padding: 30px;
+  border-radius: 30px;
+  height: 60px;
+  width: 60%;
+  border: 1px solid #1db954;
+}
+
+.search-field:focus{
+  border: 1px solid #1db954;
+
+}
+.container {
+  flex: 1;
+  position: relative; 
+}
+#player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  background-color: rgba(0, 0, 0, 0.351);
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.search-btn{
+  height: 50px;
+  width: 160px;
+  border-radius: 30px;
+  background-color: #1db954;
+  color: black;
+  border: 1px solid #1db954;
+  margin-top: 20px;
+}
+
+.error-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+}
+
+/* Spinner ripple */
+
+.loader--ripple {
+  display: inline-block;
+  position: relative;
+  height: 64px;
+  width: 64px;
+}
+
+.loader--ripple div {
+  position: absolute;
+  animation: loader--ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  border: 4px solid #1db954;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.loader--ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes loader--ripple {
+  0% {
+      top: 28px;
+      left: 28px;
+      opacity: 1;
+      height: 0;
+      width: 0;
+  }
+
+  100% {
+      top: -1px;
+      left: -1px;
+      opacity: 0;
+      height: 58px;
+      width: 58px;
+  }
+}

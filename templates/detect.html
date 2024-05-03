@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div id="player-container">
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-8">
+        <div class="vid-play">
+          <video id="video" width="680px" height="480px" autoplay muted></video>
+        </div>
+        <div id="emotion-div"></div>
+        <div class="vid-cam-btn text-center">
+          <button class="btn btn-success px-3 mx-4 my-2" id="startButton">Start</button>
+          <button class="btn btn-danger px-3 mx-4 my-2" id="stopButton">Stop</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div id="music-list" style="display: flex; flex-direction: column;">
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+{% endblock %}
+<!-- main area -->
