@@ -28,7 +28,15 @@
           <div class="card-body" style="min-height: 120px;">
             <p class="card-text">{{ track.name }}</p>
             <p class="mb-2">{{ '%.2f' % (track.duration / 60000) }} mins</p>
-            <p class="mb-2">By {{track.artist}}</p>
+            <div class="d-flex flex-row align-items-center justify-content-between">
+              <p class="mb-2">By {{track.artist}}</p>
+              <div>
+                <div class="history-icon1 circle-bg"
+                            onclick="addPlaylist('{{ track.song_url }}','{{ track.name }}','{{ track.duration }}', '{{ track.image_url }}')">
+                            <span class="fa fa-plus"></span>
+                        </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -36,5 +44,7 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
+
 {% endblock %}
 <!-- main area -->

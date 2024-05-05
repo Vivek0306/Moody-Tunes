@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}History{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div id="player-container">
+    </div>
+    <h1 class="mb-4">Emotion History ⏳</h1>
+    <p class="text-muted">Listen to the songs you heard in the past.</p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Emotion</th>
+                    <th scope="col">Detected At</th>
+                    <th scope="col">Song</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emotion in emotions %}
+                <tr>
+                    <th scope="row">{{ emotion.id }}</th>
+                    <td>{{ emotion.emotion }}</td>
+                    <td>{{ emotion.detected_at }}</td>
+                    <td class="d-flex flex-row justify-content-between">{{ emotion.name }} <div class="d-flex flex-row"><div class="play-icon history-icon"
+                            onclick="playSong('{{ emotion.song }}')">
+                            <span class="fa fa-play"></span>
+                        </div>
+                        <div class="play-icon history-icon1"
+                            onclick="addPlaylist('{{ emotion.song }}','{{ emotion.name }}','{{ emotion.duration }}', '{{ emotion.image }}')">
+                            <span class="fa fa-plus"></span>
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
+
+{% endblock %}
+<!-- main area -->

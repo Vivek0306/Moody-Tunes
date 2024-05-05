@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Your Playlist{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div id="player-container">
+    </div>
+    <h1 class="mb-4">Your Playlist ✨</h1>
+    <p class="text-muted">Listen to your personal curation.</p>
+    <div class="container m-3">
+
+        <div class="row">
+          {% for track in playlist %}
+          <div class="col-lg-3 col-sm-12 p-3">
+            <div class="card music-sec" style="width: 16rem; background-color: #171717;">
+              <div class="img-div">
+                <img src="{{ track.image }}" class="card-img-top" alt="{{ track.name }}">
+                <div class="play-icon" onclick="playSong('{{ track.song }}')">
+                  <span class="fa fa-play"></span>
+                </div>
+              </div>
+              <div class="card-body" style="min-height: 120px;">
+                <p class="card-text">{{ track.name }}</p>
+                <p class="mb-2">{{ '%.2f' % (track.duration / 60000) }} mins</p>
+                <!-- <p class="mb-2">By {{track.artist}}</p> -->
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    <!-- <div class="table-responsive">
+        <table class="table table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Song</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emotion in playlist %}
+                <tr>
+                    <th scope="row">{{ emotion.id }}</th>
+                    <td class="d-flex flex-row justify-content-between">{{ emotion.name }} <div class="d-flex flex-row"><div class="play-icon history-icon"
+                            onclick="playSong('{{ emotion.song }}')">
+                            <span class="fa fa-play"></span>
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> -->
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
+
+{% endblock %}
+<!-- main area -->

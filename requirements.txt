@@ -2,3 +2,4 @@ flask
 flask_socketio
 python-dotenv
 requests
+Flask-SQLAlchemy

@@ -55,10 +55,19 @@
           </a>
         </div>
         <div class="row pt-3">
-          <a href="{{ url_for('playlists') }}">
-            <h3><i class="fa fa-folder"></i>&nbsp; Playlists</h3>
+          <a href="{{ url_for('user_playlist') }}">
+            <h3><i class="fa fa-list-alt"></i>&nbsp; Playlists</h3>
           </a>
-          
+        </div>
+        <div class="row pt-3">
+          <a href="{{ url_for('categories') }}">
+            <h3><i class="fa fa-folder"></i>&nbsp; Categories</h3>
+          </a>
+        </div>
+        <div class="row pt-3">
+          <a href="{{ url_for('history') }}">
+            <h3><i class="fa fa-history"></i>&nbsp; History</h3>
+          </a>
         </div>
       </div>
     </div>
@@ -72,13 +81,12 @@
     </div>
 
   </div>
+
+  
+  {% block scripts %}{% endblock %}
   
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/face-api.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/index.js') }}"></script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

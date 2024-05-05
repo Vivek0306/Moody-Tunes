@@ -148,3 +148,27 @@ a:hover{
       width: 58px;
   }
 }
+
+.history-icon{
+  margin-right: 20px; 
+  background-color: #1ED760; 
+  border-radius: 50px; 
+  padding: 5px 10px;
+}
+
+.history-icon1{
+  margin-right: 20px; 
+  background-color: #191414; 
+  border-radius: 50px; 
+  padding: 5px 10px;
+}
+
+.circle-bg{
+  cursor: pointer;
+  background-color: #121212;
+  margin-bottom: 20px;
+}
+
+.circle-bg:hover{
+  background-color: #1db954;
+}

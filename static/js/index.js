@@ -109,7 +109,7 @@ video.addEventListener('play', () => {
                       <p class="mb-2">${(track.duration / 60000).toFixed(2)} mins</p>
                       <p class="mb-2">By ${track.artist}</p>
                   </div>
-                    <div class="mx-4 play-icon" onclick="playSong('${track.song_url}')">
+                    <div class="mx-4 play-icon" onclick="playSongAndStore('${track.song_url}', '${detected_emotion}', '${track.name}', '${track.duration}', '${track.image_url}')">
                       <span class="fa fa-play"></span>
                     </div>
               </div>
@@ -141,19 +141,3 @@ video.addEventListener('play', () => {
 });
 
 
-function playSong(uri) {
-  fetch(`/play?uri=${uri}`)
-    .then(response => response.json())
-    .then(data => {
-      const playerContent = document.createElement('div');
-      playerContent.innerHTML = data.embed_html;
-
-      const container = document.getElementById('player-container');
-      container.innerHTML = '';
-
-      container.appendChild(playerContent);
-    })
-    .catch(error => {
-      console.error('Error fetching embed:', error);
-    });
-}
