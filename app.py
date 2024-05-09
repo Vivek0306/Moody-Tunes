@@ -230,7 +230,7 @@ def categories():
         }
         fear_songs.append(track_info)
     random.shuffle(fear_songs)
-    fear_songs = fear_songs[:4]
+    fear_songs = fear_songs[:8]
     return render_template('categories.html', happy_songs=happy_songs, surprised_songs=surprised_songs, sad_songs=sad_songs, fear_songs=fear_songs, access_token=get_token())
 
 @app.route('/user_playlist')
