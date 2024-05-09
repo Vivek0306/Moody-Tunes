@@ -48,6 +48,8 @@ def add_song(song, name, duration, image):
     new_song = Playlist(song=song, name=name,  duration=duration, image=image)
     db.session.add(new_song)
     db.session.commit()
+# End Database Section
+
 
 # Spotify Fetching
 def get_token():
@@ -88,7 +90,7 @@ def get_songs_for_category(category, limit):
     json_result = json.loads(result.content)
 
     return json_result
-
+# End Spotify Fetching
 
 # Routes
 @app.route('/')
@@ -285,8 +287,9 @@ def play():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# End Routes
 
-
+# Socket Connection
 @socketio.on('connect')
 def test_connect():
     print("SOCKET CONNECTED")
@@ -295,6 +298,8 @@ def test_connect():
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
+
+# End Socket Connection
 
 with app.app_context():
     db.create_all()
