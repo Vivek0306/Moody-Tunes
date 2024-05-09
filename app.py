@@ -96,7 +96,7 @@ def get_songs_for_category(category, limit):
 # Routes
 @app.route('/')
 def index():
-    response = get_songs_for_category("he", 8)
+    response = get_songs_for_category("malayalam songs for all moods", 8)
     tracks = response["tracks"]["items"]
     track_data = []
     for track in tracks:
