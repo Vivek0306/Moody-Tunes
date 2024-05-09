@@ -1,14 +1,15 @@
-from flask import Flask, render_template, session, jsonify, Response, request
-from flask_socketio import SocketIO, emit
-from flask_sqlalchemy import SQLAlchemy
 import json
 import os
 import random
 import base64
+from flask import Flask, render_template, jsonify, request
+from flask_socketio import SocketIO, emit
+from flask_sqlalchemy import SQLAlchemy
 from requests import post, get
 from dotenv import load_dotenv
 from urllib.parse import quote
 from datetime import datetime
+
 # Environment Variables
 load_dotenv()
 client_id = os.getenv("CLIENT_ID")
