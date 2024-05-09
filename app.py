@@ -169,7 +169,7 @@ def add_playlist():
 
 @app.route('/categories')
 def categories():
-    response = get_songs_for_category("happy songs", 4)
+    response = get_songs_for_category("happy malayalam songs", 4)
     tracks = response["tracks"]["items"]
     happy_songs = []
     for track in tracks:
@@ -184,7 +184,7 @@ def categories():
         happy_songs.append(track_info)
     random.shuffle(happy_songs)
     happy_songs = happy_songs[:8]
-    response = get_songs_for_category("songs that can fix my sad mood", 4)
+    response = get_songs_for_category("malayalam songs that can fix my sad mood", 4)
     tracks = response["tracks"]["items"]
     sad_songs = []
     for track in tracks:
@@ -200,7 +200,7 @@ def categories():
     random.shuffle(sad_songs)
     sad_songs = sad_songs[:8]
 
-    response = get_songs_for_category("songs that can fix my surprised mood", 8)
+    response = get_songs_for_category("malayalam songs that can fix my surprised mood", 8)
     tracks = response["tracks"]["items"]
     surprised_songs = []
     for track in tracks:
@@ -216,7 +216,7 @@ def categories():
         surprised_songs.append(track_info)
     random.shuffle(surprised_songs)
     surprised_songs = surprised_songs[:8]
-    response = get_songs_for_category("fearful songs", 8)
+    response = get_songs_for_category("malayalam fearful songs", 8)
     tracks = response["tracks"]["items"]
     fear_songs = []
     for track in tracks:
