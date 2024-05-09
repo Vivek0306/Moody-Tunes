@@ -216,7 +216,7 @@ def categories():
         surprised_songs.append(track_info)
     random.shuffle(surprised_songs)
     surprised_songs = surprised_songs[:8]
-    response = get_songs_for_category("malayalam fearful songs", 8)
+    response = get_songs_for_category("malayalam angry songs", 8)
     tracks = response["tracks"]["items"]
     fear_songs = []
     for track in tracks:
