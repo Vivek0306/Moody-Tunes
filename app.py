@@ -121,7 +121,7 @@ def fetch_songs():
     emotion = request.args.get('emotion')
     # store_emotion(emotion)
     response = get_songs_for_category(
-        f"songs that are perfect for {emotion} mood", 12)
+        f"malayalam songs that are perfect for {emotion} mood", 12)
     print("Fetching songs for EMOTION..............",
           request.args.get('emotion'))
     tracks = response["tracks"]["items"]
